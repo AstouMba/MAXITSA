@@ -38,6 +38,14 @@ class ComposerStaticInit3db8f51fc02fa78ac030ec7c4eda7bc8
         'A' => 
         array (
             'Astou\\Maxitsa\\' => 14,
+            'App\\Service\\' => 12,
+            'App\\Repository\\' => 15,
+            'App\\Entity\\' => 11,
+            'App\\Core\\abstract\\' => 18,
+            'App\\Core\\Middleware\\' => 20,
+            'App\\Core\\' => 9,
+            'App\\Controller\\' => 15,
+            'App\\Config\\' => 11,
         ),
     );
 
@@ -77,6 +85,38 @@ class ComposerStaticInit3db8f51fc02fa78ac030ec7c4eda7bc8
         'Astou\\Maxitsa\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'App\\Service\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/service',
+        ),
+        'App\\Repository\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/repository',
+        ),
+        'App\\Entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/entity',
+        ),
+        'App\\Core\\abstract\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/core/abstract',
+        ),
+        'App\\Core\\Middleware\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/middleware',
+        ),
+        'App\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/core',
+        ),
+        'App\\Controller\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/controller',
+        ),
+        'App\\Config\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/config',
         ),
     );
 

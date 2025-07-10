@@ -15,4 +15,12 @@ return array(
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Astou\\Maxitsa\\' => array($baseDir . '/src'),
+    'App\\Service\\' => array($baseDir . '/src/service'),
+    'App\\Repository\\' => array($baseDir . '/src/repository'),
+    'App\\Entity\\' => array($baseDir . '/src/entity'),
+    'App\\Core\\abstract\\' => array($baseDir . '/app/core/abstract'),
+    'App\\Core\\Middleware\\' => array($baseDir . '/core/middleware'),
+    'App\\Core\\' => array($baseDir . '/app/core'),
+    'App\\Controller\\' => array($baseDir . '/src/controller'),
+    'App\\Config\\' => array($baseDir . '/app/config'),
 );

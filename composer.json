@@ -2,7 +2,16 @@
     "name": "astou/maxitsa",
     "autoload": {
         "psr-4": {
-            "Astou\\Maxitsa\\": "src/"
+            "Astou\\Maxitsa\\": "src/", 
+            "App\\Config\\": "app/config/",
+            "App\\Core\\": "app/core/",
+            "App\\Entity\\": "src/entity/",
+            "App\\Controller\\": "src/controller/",
+            "App\\Repository\\": "src/repository/",
+            "App\\Service\\": "src/service/",
+            "App\\Core\\Middleware\\": "core/middleware/",
+            "App\\Core\\abstract\\": "app/core/abstract/"
+            
         }
     },
     "authors": [
