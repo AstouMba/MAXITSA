@@ -1,0 +1,78 @@
+<?php
+
+namespace App\Controller;
+
+use App\Service\InscriptionService;
+
+class InscriptionController
+{
+    private InscriptionService $inscriptionService;
+
+    public function __construct()
+    {
+        $this->inscriptionService = new InscriptionService();
+    }
+
+    public function register(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Récupération des données depuis le formulaire
+            $telephone = $_POST['telephone'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $numeroCNI = $_POST['numeroCNI'] ?? '';
+            $photoRecto = $_POST['photoRecto'] ?? null;
+            $photoVerso = $_POST['photoVerso'] ?? null;
+            $solde = 0.00;
+            $type = 'principal'; // ou "secondaire" dans d’autres cas
+            $transaction = []; // à remplir selon ta logique
+
+            // Appel du service
+            $result = $this->inscriptionService->inscription(
+                $nom,
+                $Prenom,
+                $adresse,
+                $numeroTelephone,
+                $photoVerso,
+                $solde,
+                $type,
+                $transaction
+            );
+
+            if ($result) {
+                // Succès
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Inscription réussie',
+                    'client'  => $result
+                ]);
+            } else {
+                // Échec
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Erreur lors de l\'inscription'
+                ]);
+            }
+        } else {
+            // Méthode non autorisée
+            http_response_code(405);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Méthode non autorisée'
+            ]);
+        }
+    }
+      public function index()
+    {
+    }
+     public function edit() {}
+    public function show(){
+    }
+    public function delete() {
+    }
+    public function create() { 
+
+    }
+
+    public function store() {  
+}
+}

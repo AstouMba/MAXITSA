@@ -1,7 +1,7 @@
 <?php
 
     use App\Controller\ControllerSecurity;
-    use App\Controller\CommandeController;
+    use App\Controller\AccueilController;
 
     return $routes = [
         // "/" => [
@@ -10,11 +10,19 @@
         // ],
         "/"=>[
             "controller" => ControllerSecurity::class,
-            "action" => "store"
+            "action" => "show"
         ],
+        // "/auth"=>[
+        //     "controller" => ControllerSecurity::class,
+        //     "action" => "store"
+        // ],
         "/inscription"=>[
             "controller" => ControllerSecurity::class,
-            "action" => "inscription"
+            "action" => "register"
+        ],
+        "/accueil"=>[
+            "controller" => AccueilController::class,
+            "action" => "index"
         ],
         
        

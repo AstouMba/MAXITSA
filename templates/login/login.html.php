@@ -26,19 +26,19 @@
                 </div>
 
                 <!-- Formulaire -->
-                <form class="space-y-6">
+                <form class="space-y-6" action="/" method="post">
                     <div>
                         <label class="block text-gray-700 text-sm font-medium mb-2">
                             Numéro de Téléphone*
                         </label>
-                        <input type="tel" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="">
+                        <input type="tel" name="telephone" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="">
                     </div>
 
                     <div>
                         <label class="block text-gray-700 text-sm font-medium mb-2">
                             Mot de passe*
                         </label>
-                        <input type="password" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="">
+                        <input type="password" name="password" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="">
                     </div>
 
                     <div class="text-left">
@@ -48,7 +48,7 @@
                     </div>
 
                     <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
-                        Connexion
+                            Connexion
                     </button>
 
                     <div class="text-center text-sm text-gray-600">

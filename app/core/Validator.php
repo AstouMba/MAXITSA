@@ -14,15 +14,21 @@ class Validator{
     return filter_var($email, FILTER_VALIDATE_EMAIL)!==false;
     
   }
-   public static function isEmpty($val){
-      return empty($val);
+   public static function isEmpty($val,$key){
+     if(empty($val)){
+      self::addError($key,"Le champs '$key' est vide");
    }
-   public static function getError(){
+   }
+   public static function getError(): array{
       return self::$error;
    }
 
-   public static function isValid($value){
-    return empty(self::$error);
+   // public static function isValid($value){
+   //  return empty(self::$error);
+   // }
+   public static function isValid(): bool
+   {
+     return count(self::$error) == 0;
    }
 
    public static function addError(string $key, string $message){

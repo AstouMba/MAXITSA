@@ -3,223 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxit - Interface Bancaire</title>
+    <title>MAX IT - Tableau de Bord</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <!-- Container principal -->
-    <div class="flex min-h-screen">
+<body class="bg-gray-50 font-sans overflow-hidden">
+    <div class="flex h-screen">
         <!-- Sidebar -->
-        <div class="w-64 bg-orange-500 text-white p-6">
+        <div class="w-64 bg-orange-500 text-white flex flex-col h-full">
             <!-- Logo -->
-            <div class="mb-8">
-                <div class="bg-white text-orange-500 rounded-xl px-4 py-2 text-center font-bold">
-                    <div class="text-sm">MAX IT</div>
-                    <div class="text-xs">SA</div>
+            <div class="p-6">
+                <div class="bg-white text-orange-500 rounded-lg px-4 py-3 font-bold text-lg text-center">
+                    MAX IT<br>
+                    <span class="text-sm font-normal">SA</span>
                 </div>
             </div>
             
             <!-- Navigation -->
-            <nav class="space-y-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-6 h-6">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                        </svg>
-                    </div>
-                    <span class="text-lg font-medium">Accueil</span>
-                </div>
-                
-                <div class="flex items-center space-x-3">
-                    <div class="w-6 h-6">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                    </div>
-                    <span class="text-lg font-medium">Transactions</span>
-                </div>
-                
-                <div class="flex items-center space-x-3">
-                    <div class="w-6 h-6">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                        </svg>
-                    </div>
-                    <span class="text-lg font-medium">mes comptes</span>
-                </div>
+            <nav class="flex-1 px-6">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 py-3 px-4 rounded-lg bg-orange-600 bg-opacity-50">
+                            <i class="fas fa-home text-lg"></i>
+                            <span class="font-medium">Accueil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 py-3 px-4 rounded-lg hover:bg-orange-600 hover:bg-opacity-50 transition-colors">
+                            <i class="fas fa-exchange-alt text-lg"></i>
+                            <span class="font-medium">Transactions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 py-3 px-4 rounded-lg hover:bg-orange-600 hover:bg-opacity-50 transition-colors">
+                            <i class="fas fa-wallet text-lg"></i>
+                            <span class="font-medium">mes comptes</span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
             
-            <!-- Déconnexion -->
-            <div class="absolute bottom-6 left-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-6 h-6">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
-                        </svg>
-                    </div>
-                    <span class="text-lg font-medium">Deconnexion</span>
-                </div>
+            <!-- Logout -->
+            <div class="p-6">
+                <a href="#" class="flex items-center space-x-3 py-3 px-4 rounded-lg hover:bg-orange-600 hover:bg-opacity-50 transition-colors">
+                    <i class="fas fa-sign-out-alt text-lg"></i>
+                    <span class="font-medium">Deconnexion</span>
+                </a>
             </div>
         </div>
         
-        <!-- Contenu principal -->
-        <div class="flex-1 flex flex-col">
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col h-full">
             <!-- Header -->
-            <header class="bg-white shadow-sm px-6 py-4">
-                <div class="flex items-center justify-between">
-                    <!-- Barre de recherche -->
-                    <div class="flex items-center bg-gray-100 rounded-lg px-4 py-2 w-96">
-                        <svg class="w-5 h-5 text-gray-400 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                        </svg>
-                        <input type="text" placeholder="recherche" class="bg-transparent outline-none text-gray-700 w-full">
+            <header class="bg-white shadow-sm border-b border-gray-200 flex-shrink-0">
+                <div class="px-8 py-4 flex items-center justify-between">
+                    <!-- Search Bar -->
+                    <div class="flex-1 max-w-md">
+                        <div class="relative">
+                            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" placeholder="recherche" class="w-full pl-10 pr-4 py-2 bg-gray-100 rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
                     </div>
                     
+                    <!-- User Info -->
                     <div class="flex items-center space-x-4">
-                        <!-- Avatar utilisateur -->
-                        <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
-                        <!-- Nom utilisateur -->
-                        <div class="bg-orange-500 text-white px-4 py-2 rounded-lg font-medium">
-                            Astou Mbow
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b332c1c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="User" class="w-10 h-10 rounded-full object-cover">
+                            <span class="bg-orange-500 text-white px-4 py-2 rounded-lg font-medium">Astou Mbow</span>
                         </div>
-                        <!-- Notification -->
-                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
-                            <svg class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
-                            </svg>
-                        </div>
+                        <i class="fas fa-bell text-gray-400 text-xl"></i>
                     </div>
                 </div>
             </header>
             
-            <!-- Contenu principal -->
-            <main class="flex-1 p-6">
-                <!-- Carte compte principal -->
-                <div class="bg-orange-500 text-white rounded-2xl p-8 mb-8 relative">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h1 class="text-4xl font-bold mb-2">Maxit</h1>
-                            <p class="text-orange-100 text-lg mb-4">Compte principale</p>
-                            <p class="text-orange-100 text-lg">77 199 28 43</p>
+            <!-- Dashboard Content -->
+            <main class="flex-1 p-8 overflow-y-auto">
+                <!-- Account Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Main Account -->
+                    <div class="bg-orange-500 text-white rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-2">Compte Principal</h3>
+                        <p class="text-lg font-medium">+221771992843</p>
+                    </div>
+                    
+                    <!-- Balance -->
+                    <div class="bg-orange-500 text-white rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-2">Solde : 0.00fcfa</h3>
+                    </div>
+                    
+                    <!-- QR Code -->
+                    <div class="bg-orange-500 text-white rounded-2xl p-6 flex items-center justify-between">
+                        <div class="bg-white text-orange-500 rounded-lg px-4 py-3 font-bold text-lg">
+                            MAX IT<br>
+                            <span class="text-sm font-normal">SA</span>
                         </div>
-                        
-                        <div class="text-center">
-                            <p class="text-2xl font-bold mb-1">solde: 120500 fcfa</p>
-                        </div>
-                        
-                        <div class="flex flex-col items-end space-y-4">
-                            <!-- QR Code -->
-                            <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center">
-                                <div class="w-16 h-16 bg-black rounded grid grid-cols-8 gap-px">
-                                    <div class="bg-white col-span-3 row-span-3"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                    <div class="bg-white"></div>
-                                    <div class="bg-black"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Logo MAX IT -->
-                            <div class="bg-white text-orange-500 rounded-xl px-4 py-2 text-center font-bold">
-                                <div class="text-sm">MAX IT</div>
-                                <div class="text-xs">SA</div>
+                        <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center">
+                            <div class="grid grid-cols-8 gap-1">
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Boutons d'action -->
-                <div class="flex space-x-4">
-                    <button class="bg-white border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-full font-medium hover:bg-orange-50 transition-colors flex items-center space-x-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v12z"/>
-                        </svg>
-                        <span>consulter mes transaction</span>
+                <!-- Action Buttons -->
+                <div class="flex gap-4 mb-8">
+                    <button class="flex items-center space-x-2 bg-white border border-orange-500 text-orange-500 px-6 py-3 rounded-full hover:bg-orange-50 transition-colors">
+                        <i class="fas fa-plus"></i>
+                        <span>créer un compte secondaire</span>
                     </button>
-                    
-                    <button class="bg-white border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-full font-medium hover:bg-orange-50 transition-colors flex items-center space-x-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                        </svg>
-                        <span>creer un compte secondaire</span>
-                    </button>
-                    
-                    <button class="bg-white border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-full font-medium hover:bg-orange-50 transition-colors flex items-center space-x-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
+                    <button class="flex items-center space-x-2 bg-white border border-orange-500 text-orange-500 px-6 py-3 rounded-full hover:bg-orange-50 transition-colors">
+                        <i class="fas fa-exchange-alt"></i>
                         <span>changer de compte</span>
                     </button>
+                </div>
+                
+                <!-- Transactions Section -->
+                <div class="bg-white rounded-3xl p-8 shadow-sm">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Les 10 derniers transactions</h2>
                     
-                    <button class="bg-white border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-full font-medium hover:bg-orange-50 transition-colors flex items-center space-x-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                        </svg>
-                        <span>consulter solde de mon compte</span>
-                    </button>
+                    <div class="space-y-4">
+                        <!-- Transaction 1 -->
+                        <div class="flex items-center justify-between py-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-credit-card text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Paiement</h4>
+                                    <p class="text-orange-500 text-sm">12 janvier 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-red-500">-25000 fcfa</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Transaction 2 -->
+                        <div class="flex items-center justify-between py-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-down text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Depot</h4>
+                                    <p class="text-orange-500 text-sm">23 juin 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-green-500">245488 fcfa</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Transaction 3 -->
+                        <div class="flex items-center justify-between py-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-up text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Retrait</h4>
+                                    <p class="text-orange-500 text-sm">23 juillet 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-red-500">245488 fcfa</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Transaction 4 -->
+                        <div class="flex items-center justify-between py-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-credit-card text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Paiement</h4>
+                                    <p class="text-orange-500 text-sm">23 juillet 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-green-500">245488 fcfa</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Transaction 5 -->
+                        <div class="flex items-center justify-between py-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-down text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Depot</h4>
+                                    <p class="text-orange-500 text-sm">23 juillet 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-green-500">245488 fcfa</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Transaction 6 -->
+                        <div class="flex items-center justify-between py-4 border-b border-gray-100">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-up text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Retrait</h4>
+                                    <p class="text-orange-500 text-sm">23 juillet 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-red-500">245488 fcfa</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Transaction 7 -->
+                        <div class="flex items-center justify-between py-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-arrow-down text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Depot</h4>
+                                    <p class="text-orange-500 text-sm">23 juillet 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-green-500">245488 fcfa</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>

@@ -1,11 +1,15 @@
 <?php
 namespace App\Core\abstract;
-
+use App\Core\Session;
 
 
  abstract class AbstractController {
 
  protected $baseLayout = "base";
+
+ public function __construct(){
+    Session::getInstance();
+}
  
    abstract public function create();
    
