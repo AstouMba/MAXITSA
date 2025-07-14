@@ -22,7 +22,7 @@
                 <div class="bg-white text-orange-500 rounded-xl px-4 py-2 text-center font-bold">
                     <div class="text-sm">MAX IT</div>
                     <div class="text-xs">SA</div>
-                </div>
+                </div> 
             </div>
             
             <!-- Navigation -->

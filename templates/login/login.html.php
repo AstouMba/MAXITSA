@@ -48,7 +48,9 @@
                     </div>
 
                     <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
-                        Connexion
+                        <a href="/accueil">
+                            Connexion
+                        </a>
                     </button>
 
                     <div class="text-center text-sm text-gray-600">

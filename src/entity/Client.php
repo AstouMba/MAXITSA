@@ -1,18 +1,26 @@
 <?php
-namespace APP\entity;
-use App\core\AbstractEntity;
+namespace App\entity;
+use App\Core\abstract\AbstractEntity;
+use App\Repository;
 
 class Client extends AbstractEntity {
     private int $id;
     private string $name;
     private string $prenom;
-    private ?string $telephone ;
+    private string $telephone ;
+    private string $adresse ;
+    private int $compte_id;
+
 
     public static function toObject(array $data): static {
         $client = new static();
         $client->id = $data['id'];
         $client->name = $data['name'];
         $client->prenom = $data['prenom'];
+        $client->ptelephone = $data['telephone'];
+        $client->adresse = $data['adresse'] ;
+        $client->compte_id = $data['compte_id'] ;
+
         return $client;
     }
 
@@ -22,6 +30,9 @@ class Client extends AbstractEntity {
             'name' => $this->name,
             'prenom' => $this->prenom,
             'telephone' => $this->telephone ,
+            'adresse' => $this->adresse ,
+            'compte_id' => $this->compte_id
         ];
     }
+ 
 }

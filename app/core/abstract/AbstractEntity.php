@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core\abract;
+namespace App\Core\abstract;
 
 abstract class AbstractEntity {
     abstract public static function toObject(array $data): static;
